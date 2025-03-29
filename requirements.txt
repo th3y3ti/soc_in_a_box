@@ -1,0 +1,7 @@
+pandas>=2.2.0
+jupyter>=1.0.0
+jira>=3.5.2
+notebook>=7.0.7
+ipykernel>=6.29.0
+requests>=2.31.0
+python-dotenv>=1.0.0 
