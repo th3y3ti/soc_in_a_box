@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
-from tools.create_jira import create_jira_issue
-from tools.metasploit_module_monitor import get_recent_modules
+from agents.metasploit_agent import MetasploitModuleAgent
+from agents.jira_agent import JiraAgent
 
 def main():
     """Main entry point for the SOC in a Box application"""
@@ -11,14 +11,34 @@ def main():
     print("SOC in a Box - Security Operations Center Automation")
     print("===================================================")
     
-    # TODO: Add main application logic here
-    # This could include:
-    # - Monitoring for new Metasploit modules
-    # - Creating Jira issues for new findings
-    # - Running security scans
-    # - Processing alerts
+    # Initialize agents
+    metasploit_agent = MetasploitModuleAgent()
+    jira_agent = JiraAgent()
     
-    print("\nApplication initialized successfully.")
+    print("\nChecking for new Metasploit modules...")
+    
+    # Process new modules
+    results = metasploit_agent.process_new_modules()
+    
+    if results:
+        print(f"\nFound {len(results)} new modules to process")
+        
+        # Create Jira tickets for each new module
+        for module_data in results:
+            print(f"\nProcessing module: {module_data['module_name']}")
+            
+            # Create Jira ticket
+            issue_key = jira_agent.create_ticket(module_data)
+            if issue_key:
+                print(f"Created Jira ticket: {issue_key}")
+            else:
+                print("Failed to create Jira ticket")
+                
+        print("\nProcessing complete!")
+    else:
+        print("\nNo new modules found.")
+    
+    print("\nApplication completed successfully.")
 
 if __name__ == "__main__":
     main() 
