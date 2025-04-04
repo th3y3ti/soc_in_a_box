@@ -33,7 +33,8 @@ soc-in-a-box addresses these challenges by deploying a suite of specialized AI a
 * Flexible XDR Integration (Planned: Wazuh, Open XDR)
 * AI-Powered Alert Triage & Prioritization
 * Automated Contextual Enrichment (Threat Intel, Assets, User Behavior)
-* **AI Explanation of Alerts & Events (Plain Language Summaries)**
+
+**AI Explanation of Alerts & Events (Plain Language Summaries)**
 * Response Playbook / Action Suggestions
 * Analyst Feedback Loop for Triage Tuning
 * Automated Investigation Creation & Handover
@@ -44,8 +45,8 @@ soc-in-a-box addresses these challenges by deploying a suite of specialized AI a
 * Policy & Control Framework Mapping Capabilities (e.g., NIST CSF, CIS)
 
 **Proactive Security & Validation:**
-* **AI-Suggested Threat Hunting Playbooks & Support**
-* **Security Controls Validation & Auditing Assistance**
+* AI-Suggested Threat Hunting Playbooks & Support
+* Security Controls Validation & Auditing Assistance
 
 **Visibility & Workflow:**
 * Operational Dashboard for Monitoring AI Agents & Key Metrics
